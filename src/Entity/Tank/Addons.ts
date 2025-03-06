@@ -18,8 +18,8 @@
 
 import GameServer from "../../Game";
 import ObjectEntity from "../Object";
+import ReverseAutoTurretMachineGun from "./ReverseAutoTurretMachineGun";
 import AutoTurret from "./AutoTurret";
-
 import { Color, PositionFlags, PhysicsFlags, StyleFlags } from "../../Const/Enums";
 import { BarrelBase } from "./TankBody";
 import { addonId, BarrelDefinition } from "../../Const/TankDefinitions";
@@ -438,7 +438,15 @@ class SpieskAddon extends Addon {
         this.createGuard(4, 1.3, 2 * Math.PI / 6, 0.17);
     }
 }
+}
+/** NEW addon. */
+class ReverseAutoTurretMachineGunAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
 
+        new ReverseAutoTurretMachineGun(owner);
+    }
+}
 /**
  * All addons in the game by their ID.
  */
@@ -460,4 +468,5 @@ export const AddonById: Record<addonId, typeof Addon | null> = {
     auto2: Auto2Addon,
     autorocket: AutoRocketAddon,
     spiesk: SpieskAddon,
+    reverseautoturretmachinegun: ReverseAutoTurretMachineGun,
 }
