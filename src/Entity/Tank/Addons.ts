@@ -438,7 +438,7 @@ class SpieskAddon extends Addon {
         this.createGuard(4, 1.3, 2 * Math.PI / 6, 0.17);
     }
 }
-}
+
 /** NEW addon. */
 class ReverseAutoTurretMachineGunAddon extends Addon {
     public constructor(owner: BarrelBase) {
@@ -462,11 +462,12 @@ export const AddonById: Record<addonId, typeof Addon | null> = {
     smasher: SmasherAddon,
     landmine: LandmineAddon,
     autoturret: AutoTurretAddon,
+    reverseautoturretmachinegun: ReverseAutoTurretMachineGunAddon,
+
     // not part of diep
     weirdspike: WeirdSpikeAddon,
     auto7: Auto7Addon,
     auto2: Auto2Addon,
     autorocket: AutoRocketAddon,
     spiesk: SpieskAddon,
-    reverseautoturretmachinegun: ReverseAutoTurretMachineGun,
 }
